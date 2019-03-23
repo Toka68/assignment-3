@@ -1,0 +1,19 @@
+
+<div class="grid-container">
+    <div *ngFor="let song of songs; index as i" class="buttonContainer">
+        <button class="button" (click)='loadSong(song)'>
+            Song {{i + 1}}
+        </button>
+    </div>
+    <div class="infoArea" *ngIf="currentSong != null">
+        <div>
+            <p><b>Name</b> : {{ currentSong.name }}</p>
+            <p><b>Artist</b> : {{ currentSong.artist }}</p>
+            <p><b>Year</b> : {{ currentSong.year }}</p>
+            <p><b>Genre</b> : {{ currentSong.genre }}</p>
+        </div>
+    </div>
+    <div class="pictureArea" *ngIf="currentSong != null">
+        <img src="{{ currentSong.picture }}" width="170px">
+    </div>
+</div>
